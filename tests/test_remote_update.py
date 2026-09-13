@@ -47,6 +47,13 @@ class RemoteUpdateTests(unittest.TestCase):
         self.assertTrue(sync(self.host).startswith('blocked:'))
         self.assertFalse((self.host / 'requirements.txt').exists())
 
+    def test_untracked_work_blocks_remote_update(self):
+        self.commit('bot.py', 'remote update')
+        (self.host / 'unfinished.py').write_text('preserve user work')
+        self.assertIn('local changes', sync(self.host))
+        self.assertEqual((self.host / 'bot.py').read_text(), 'initial')
+        self.assertEqual((self.host / 'unfinished.py').read_text(), 'preserve user work')
+
     def test_divergence_never_overwrites_local_commits(self):
         (self.host / 'local.txt').write_text('keep')
         self.git(self.host, 'add', 'local.txt')
