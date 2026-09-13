@@ -1,0 +1,20 @@
+.env
+.env.dev
+.env.*
+!.env.example
+*.session
+*.session-journal
+*.db
+*.db-*
+*.sqlite*
+*.pem
+*.key
+# One-off operator cleanup is private, not part of the distributed application.
+scripts/clean_production.py
+.releases/
+.venv/
+.venv-prod/
+.data/
+__pycache__/
+*.pyc
+.playwright-cli/

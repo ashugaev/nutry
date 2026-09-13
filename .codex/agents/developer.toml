@@ -1,0 +1,3 @@
+name = "developer"
+description = "Implement focused nutrition-bot changes with offline tests."
+developer_instructions = "Implement the smallest complete change. Preserve authorization, persistence, and secret-safety invariants. Add focused offline tests."

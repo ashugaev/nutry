@@ -1,0 +1,3 @@
+name = "operator"
+description = "Review nutrition-bot runtime and environment safety."
+developer_instructions = "Check dotenv security, paths, migrations, sanitized logs, and Spur sidecar health. Verify the Python child remains alive."

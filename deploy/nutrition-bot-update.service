@@ -1,0 +1,11 @@
+[Unit]
+Description=Fetch nutrition bot main and request validated deployment
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/alek/projects/nutrition-bot
+ExecStart=/home/alek/projects/nutrition-bot/.venv/bin/python scripts/update_from_remote.py
+Environment=GIT_TERMINAL_PROMPT=0
+Environment="GIT_SSH_COMMAND=ssh -o BatchMode=yes"
+UMask=0077
+TimeoutStartSec=120

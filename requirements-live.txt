@@ -1,0 +1,4 @@
+# Optional, authorized acceptance tooling only.
+-r requirements.txt
+telethon>=1.36,<2
+Pillow>=10

@@ -1,0 +1,14 @@
+projects:
+  nutrition-bot:
+    name: "nutrition-bot"
+    path: .
+    defaultBranch: main
+    sessionPrefix: nutrition-bot
+    defaultAgent: codex
+    symlinks:
+      - .env.dev
+    sidecars:
+      bot:
+        command: 'bash scripts/bot-watch.sh'
+        autoStart: false
+        idleTtlMinutes: 999999

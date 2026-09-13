@@ -1,0 +1,9 @@
+[Unit]
+Description=Validate and reload changed nutrition bot code
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/alek/projects/nutrition-bot
+UMask=0077
+ExecStart=/usr/bin/bash /home/alek/projects/nutrition-bot/scripts/reload-if-changed.sh
+TimeoutStartSec=1800

@@ -1,0 +1,11 @@
+[Unit]
+Description=Check nutrition bot source changes every 15 seconds
+
+[Timer]
+OnBootSec=30
+OnUnitInactiveSec=15
+AccuracySec=1
+Unit=nutrition-bot-reload.service
+
+[Install]
+WantedBy=timers.target

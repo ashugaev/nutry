@@ -1,0 +1,27 @@
+[features]
+multi_agent = true
+hooks = true
+
+[agents]
+max_threads = 6
+max_depth = 2
+
+[agents.architect]
+description = "Plan non-trivial nutrition-bot changes and offline acceptance checks."
+config_file = "agents/architect.toml"
+
+[agents.developer]
+description = "Implement focused nutrition-bot changes with offline tests."
+config_file = "agents/developer.toml"
+
+[agents.reviewer]
+description = "Review nutrition-bot diffs for correctness and privacy."
+config_file = "agents/reviewer.toml"
+
+[agents.tester]
+description = "Run nutrition-bot offline validation."
+config_file = "agents/tester.toml"
+
+[agents.operator]
+description = "Review nutrition-bot runtime and environment safety."
+config_file = "agents/operator.toml"

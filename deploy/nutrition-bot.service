@@ -1,0 +1,23 @@
+[Unit]
+Description=Nutrition diary bot (Telegram, SQLite, Notion)
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=/home/alek/projects/nutrition-bot/.releases/current
+Environment=PYTHONUNBUFFERED=1
+UMask=0077
+ExecStartPre=/usr/bin/mkdir -p /home/alek/projects/nutrition-bot/.data
+ExecStart=/usr/bin/flock --no-fork --nonblock --conflict-exit-code 75 /home/alek/projects/nutrition-bot/.data/bot.lock /home/alek/projects/nutrition-bot/.venv-prod/bin/python bot.py
+Restart=always
+RestartSec=10
+RestartPreventExitStatus=75
+TimeoutStopSec=90
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=nutrition-bot
+
+[Install]
+WantedBy=default.target

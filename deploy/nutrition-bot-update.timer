@@ -1,0 +1,10 @@
+[Unit]
+Description=Check nutrition bot origin/main every two minutes
+
+[Timer]
+OnBootSec=60
+OnUnitInactiveSec=120
+Unit=nutrition-bot-update.service
+
+[Install]
+WantedBy=timers.target
